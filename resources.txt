@@ -1,0 +1,5 @@
+WEB DESIGN
+- Interactive HTML, CSS and JS: codepen.io
+
+MISC
+- Regex translator: regexr.com
