@@ -1,0 +1,9 @@
+OS running shell
+$ echo $SHELL
+
+Hidden files start with a dot .
+
+Directory notation
+[-d] - for files, d for directories
+[rwx-] r for read, w for write, x for execute, - for none
+4096 bites - standard mininum file size
