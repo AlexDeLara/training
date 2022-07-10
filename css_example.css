@@ -1,9 +1,21 @@
 /* This is a class */
 .classExample {
-    color: "blue";
+    color: blue;
 }
 
 /* This is ID formatting */
 #idName {
     float: right;
+}
+
+/* This formats a specific HTML tag */
+h1 {
+    text-align: center;
+    color: #3f3f3f;
+    text-decoration: underline;
+}
+
+/* Compund CSS. Only the las nested element is affected */
+ul li {
+    color: aqua;
 }
