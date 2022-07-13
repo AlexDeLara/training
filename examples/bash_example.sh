@@ -51,6 +51,9 @@ chmod o+r fileName      # Add reading privileges to other
 # Append to file
 echo "Append this message" >> file.txt
 
+# Overwrite gile
+echo "Overwrite" > file.txt
+
 # Edit cron jobs
 crontab -e
 
@@ -68,3 +71,61 @@ crontab -e
 # Run at reboot: @reboot
 
 # ~/.bashrc Loads everytime a new termial is opened
+
+# Find a file
+which fileName
+
+# Count file lines
+wc -l fileName
+
+# Count file words
+wc -w fileName
+
+# Create multiple directories
+mkdir -p dir1/dir2/dir3
+
+# Loops
+while true;
+    do echo "Hanging out...";
+    sleep 2;
+    done
+
+# See active processes
+jobs
+
+# Stop a running process
+Ctrl + Z
+
+# Resume a stopped job
+fg 1 # 1 is the process id
+
+# Run process in the backround: add & at the end of the command
+# To kill a background process first it must be moved to the foreground
+
+# Bash piping
+# Execute command2 if command1 is successful
+command1 && command2 
+# Take command1 output as input for command2
+command1 | command2
+# Redirect command1 output to file and overwrite
+command1 > file.txt
+
+# Sort output in reverse
+sort -r
+
+# Redirect error to log
+2>log.log
+
+# Read only last/first n lines of file
+tail -n 3 fileName
+head -n 2 fileName
+
+# Shortcuts
+# Ctrl+A To move at the start of the line
+# Ctrl+E To move at the end of the line
+# Ctrl+L Clear console
+# !56 Executes line 56 in history
+# !! Runs last command again 
+
+# Save env variable
+export VARNAME=VALUE
