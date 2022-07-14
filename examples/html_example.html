@@ -1,0 +1,61 @@
+<a href="www.google.com" target="_blank">This is an anchor tag</a>
+<img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="This is an image tag"/>
+
+<!-- Section elements -->
+<!DOCTYPE html> <!-- Declaration: ensures the browser tries to meet industry-wide specifications -->
+<html lang="en">
+    <head>
+        <title>Shown in browser tab</title>
+        <meta charset="UTF-8"/> <!-- Allows users to use their native languages -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Allows to view similarly in PC and mobile -->
+        <style>
+            h1, h2, p {
+                text-align: center;
+            }
+        </style>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <header></header>
+        <main></main>
+        <section class="css-class">
+            <article></article> <!-- Article elements contain other elements that are related. Example: product and price -->
+        </section>
+        <footer></footer>
+    </body>
+</html>
+
+<!-- A figure is a self contained element -->
+<figure>
+    <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
+    <figcaption>Cats love lasagna.</figcaption>
+</figure>
+
+<!-- Italics -->
+<em>Italics</em>
+
+<!-- Bold -->
+<em>Strong</em>
+
+<form action="https://freecatphotoapp.com/submit-cat-photo">
+    <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+    <!-- The default action of a button inside a form is to submit the action attribute in the form -->
+    <button type="submit">Submit</button>
+</form>
+
+<!-- A label associates the text of an input to the input itself. Example: the cat text selects the input itself -->
+<label><input type="radio"> cat</label>
+
+<!-- To make several radio buttons exclusive set the same name attribute value to all of them -->
+<!-- The value attribute is exported as the value of the name attribute when the form is submit -->
+<fieldset> <!-- The fieldset is used to group related inputs and labels in a web form -->
+    <legend>Is your cat an indoor or outdoor cat?</legend> <!-- The legend element acts as a caption for the content in the fieldset element. It gives users context about what they should enter into that part of the form -->
+    <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+    <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor" checked> Outdoor</label>
+    <!-- The checked attribute selects the option as default -->
+</fieldset>
+
+<!-- Checkbox elements allow multiple selections -->
+<!-- The label with the for element links a text to an input with the same id -->
+<!-- The value attribute is always added as best practice even if it is not used -->
+<input id="loving" type="checkbox" name="personality" value="loving"> <label for="loving">Loving</label>

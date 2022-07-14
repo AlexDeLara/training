@@ -19,3 +19,16 @@ h1 {
 ul li {
     color: aqua;
 }
+
+/* Attribute examples */
+div {
+    width: 80%; /* Can be set in % or px */
+    background-color: burlywood;
+    margin-left: auto;  /* When both are set to auto, the element is centered */
+    margin-right: auto;
+  }
+
+/* Adds a background image to the entire body */
+body {
+background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg)
+}
