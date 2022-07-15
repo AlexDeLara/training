@@ -1,11 +1,12 @@
 /* This is a class */
-.classExample {
+.classExample1, .classExample2 {
     color: blue;
 }
 
 /* This is ID formatting */
 #idName {
     float: right;
+    margin: 10px 20px; /* The first value is for top-bottom and the second one left-right */
 }
 
 /* This formats a specific HTML tag */
@@ -23,12 +24,51 @@ ul li {
 /* Attribute examples */
 div {
     width: 80%; /* Can be set in % or px */
+    max-width: 500px; /* For very large screens, the width is maxed to this value */
     background-color: burlywood;
     margin-left: auto;  /* When both are set to auto, the element is centered */
     margin-right: auto;
+    font-family: Impact, serif; /* Second font is fallback font */
   }
 
 /* Adds a background image to the entire body */
 body {
-background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg)
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg)
 }
+
+/* Makes all the p items nested in the .item class behave as inline elements instead of block elements */
+.item p {
+    display: inline-block;
+    background-color: rgb(0,0,255);
+    background-color: #0000FF;
+    background-color: hsl(240, 100%, 50%);
+    /* Hue, %Saturation, %Lightness  */
+
+    background-color: rgb(255,0,0);
+    background-color: #FF0000;
+
+    background-color: rgb(0,255,0);
+    background-color: #00FF00;
+}
+
+/* Formats visited links */
+a:visited {
+    color: grey;
+}
+
+/* Formats hovered links */
+a:hover {
+    color: red;
+}
+
+/* Formats active links */
+a:active {
+    color: white;
+}
+
+/* Gradients */
+.red {                         /* Direction, colo1 stop1, color2 stop2, ... */
+    background: linear-gradient(180deg, rgb(122, 74, 14) 0%, rgb(245, 62, 113) 50%, rgb(162, 27, 27) 100%);
+    opacity: 0.5;
+    color: rgba(255, 255, 255, 50%) /* Las value is alpha-channel or how transparent it is */
+  }
