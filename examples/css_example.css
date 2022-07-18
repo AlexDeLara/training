@@ -29,6 +29,10 @@ div {
     margin-left: auto;  /* When both are set to auto, the element is centered */
     margin-right: auto;
     font-family: Impact, serif; /* Second font is fallback font */
+    font-weight: 800; /* Font boldness */
+    letter-spacing: 0.15px; /* Horizontal letter spacing */
+    float: right; /* Set element to the left or right of element */
+    clear: right /* When an element is below another element with a float:right, it clears this property and visually places it below */
   }
 
 /* Adds a background image to the entire body */
@@ -114,4 +118,45 @@ input[type="submit"] {
 input[type="password"] {
     display: block;
     width: 60%;
+}
+
+.canvas {
+    /* When element is greater than the container, it overflows. Use this attribute to adjust the container to the overflow */
+    overflow: hidden; /* Gives the margin of nested elements something to push against without modifying the dimensions */
+    filter: blur(2px); /* Blurs the elements */
+    border-radius: 9px; /* Rounds edges */
+    transform: rotate(-0.6deg); /* Rotate an element */
+    box-sizing: border-box; /* Padding and border will be INCLUDED in the element width and height */
+}
+
+#gallery {
+    display: flex;  /* Displays all elements inline in vertical or horizontal axis */
+    flex-direction: row; /* Sets de direction of display. Availible are row, row-reverse, column, column-reverse */
+    flex-wrap: wrap; /* Determines if elements continue in the next row/column when the container is too small. Availible are wrap and nowrap */
+    justify-content: center; /* Determines how elements justify (like text) in the row/column they are placed */
+    align-items: center; /* Positions the flex content along the cross axis. If flex-direction is row, then cross-axis is vertical */
+}
+
+#gallery img {
+    object-fit: cover; /* Tells the image to FILL the containir without distorting */
+    aspect-ratio: 34/5;
+    width: max(50%, 300px); /* Sets the value to whichever is bigger */
+}
+
+/* @ Are queries. If the screen width is smaller than 800px, then the selectors inside are set */
+@media(max-width: 800px){
+    #gallery img {
+         width: 50%
+    }
+}
+
+.daily-value p:not(.no-divider) { /* Selects all the elements except the ones inside :not() */
+    border-bottom: 1px solid #888989;
+}
+
+/* Target elements in list */
+nav > ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }

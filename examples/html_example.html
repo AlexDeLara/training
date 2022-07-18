@@ -8,15 +8,21 @@
         <title>Shown in browser tab</title>
         <meta charset="UTF-8"/> <!-- Allows users to use their native languages -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Allows to view similarly in PC and mobile -->
+        <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
         <style>
             h1, h2, p {
                 text-align: center;
             }
         </style>
         <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800"/> /* Import Open Sans font */
     </head>
     <body>
-        <header></header>
+        <header>
+            <nav>
+                <a href="#element-id"></a> <!-- Page navigation -->
+            </nav>
+        </header>
         <hr/> <!-- Creates a divisory line -->
         <main></main>
         <section class="class1 class2">
@@ -38,7 +44,7 @@
 <!-- Bold -->
 <em>Strong</em>
 
-<form action="https://freecatphotoapp.com/submit-cat-photo">
+<form action="https://freecatphotoapp.com/submit-cat-photo" method="post">
     <input type="text" name="catphotourl" placeholder="cat photo URL" required>
     <!-- The default action of a button inside a form is to submit the action attribute in the form -->
     <button type="submit">Submit</button>
