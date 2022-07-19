@@ -1,0 +1,7 @@
+Selectors
+
+div > .class: is called Child selector and will select all elements that are direct children of a div and have the class .class.
+
+div .class: is called Descendant selectors and will select all elements inside a div and having the class .class.
+
+div + .class: is called Adjacent sibling selector and will match any element that immediately follows a div and have the class .class.

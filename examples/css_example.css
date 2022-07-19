@@ -135,6 +135,7 @@ input[type="password"] {
     flex-wrap: wrap; /* Determines if elements continue in the next row/column when the container is too small. Availible are wrap and nowrap */
     justify-content: center; /* Determines how elements justify (like text) in the row/column they are placed */
     align-items: center; /* Positions the flex content along the cross axis. If flex-direction is row, then cross-axis is vertical */
+    position: fixed;
 }
 
 #gallery img {
@@ -160,3 +161,18 @@ nav > ul {
 	flex-direction: row;
 	justify-content: space-evenly;
 }
+
+/* Adds "Question #" before each p element */
+p::before {
+	content: "Question #"
+}
+
+nav > ul > li:hover {
+	background-color: #dfdfe2;
+	color: #1b1b32;
+	cursor: pointer; /* Changes cursor from arrow to pointer */
+}
+
+* {
+    scroll-behavior: smooth; /* Makes anchor jumping smoother */
+  }
