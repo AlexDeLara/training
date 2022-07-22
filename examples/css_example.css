@@ -99,6 +99,7 @@ h1 {
     font-size: 2.197rem; /* 2.197 × 16px = 35px */
     margin-top: 1.25rem; /* 1.25rem = 20px, ya que 1.25 × 16 = 20  */
     margin-bottom: 1.25rem;
+    padding: calc(1.25rem + 2px); /* Calculations based on other CSS elements */
 }
 
 h1:last-of-type { /* Last of that element type in html */
@@ -136,6 +137,9 @@ input[type="password"] {
     justify-content: center; /* Determines how elements justify (like text) in the row/column they are placed */
     align-items: center; /* Positions the flex content along the cross axis. If flex-direction is row, then cross-axis is vertical */
     position: fixed;
+    gap: 1rem; /* Gap between flex elements */
+    position: sticky;
+    top: 0;
 }
 
 #gallery img {
@@ -175,4 +179,46 @@ nav > ul > li:hover {
 
 * {
     scroll-behavior: smooth; /* Makes anchor jumping smoother */
+  }
+
+
+/* Selects every element which class includes sr-only */
+span[class~="sr-only"] {
+    border: 0;
+}
+
+/* Select all but a class */
+span:not(.sr-only) {
+    font-weight: normal;
+  }
+
+/* Importan attr makes sure its never unset */
+  span[class~="sr-only"] {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
+    -webkit-clip-path: inset(50%) !important;
+    height: 1px !important;
+    width: 1px !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    padding: 0 !important;
+    margin: -1px !important;
+  }
+
+  table {
+    border-collapse: collapse; /* Single border instead of one per cell */
+    border: 0;
+    position: relative;
+  }
+
+  /* Postion lets position elements inside container */
+  table caption {
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
   }
