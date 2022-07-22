@@ -222,3 +222,34 @@ span:not(.sr-only) {
     top: -2.25rem;
     left: 0.5rem;
   }
+
+  /* Targets all tr elements with ONLY total class */
+  tr.total td {
+    text-align: right;
+    padding: 0 0.25rem;
+  }
+
+  /* Targets only the nth element element */
+  tr.total td:nth-of-type(3) {
+    padding-right: 0.5rem;
+  }
+
+  /* Align element vertically */
+  tr.data td {
+    vertical-align: top;
+    text-align: right;
+    padding: 0.3rem 0.25rem 0;
+  }
+
+
+/*---------------------------------------------------- POSITIONING -------------------------------------------------------*/
+/* z-index creates layers on elements. top, right, left and bottom are used to position the element */
+#back-wall {
+    background-color: #8B4513;
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }

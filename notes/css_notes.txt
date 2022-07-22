@@ -5,3 +5,9 @@ div > .class: is called Child selector and will select all elements that are dir
 div .class: is called Descendant selectors and will select all elements inside a div and having the class .class.
 
 div + .class: is called Adjacent sibling selector and will match any element that immediately follows a div and have the class .class.
+
+The key difference between tr[class="total"] and tr.total is that the first will select tr elements where the only class is total. The second will select tr elements where the class includes total.
+
+Typically, HTML is rendered in a top-down manner. Elements at the top of the code are positioned at the top of the page. However, many times you may want to move the elements to different positions. You can do this with the position attribute.
+Set the position attribute for the back-wall element to absolute. An absolute position takes the element out of that top-down document flow and allows you to adjust it relative to its container.
+When an element is manually positioned, you can shift its layout with top, left, right, and bottom. Set the back-wall to have a top value of 0, and a left value of 0.
