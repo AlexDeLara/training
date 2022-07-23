@@ -112,7 +112,7 @@ h1:last-of-type { /* Last of that element type in html */
 
 /* Modify elements based on type and name attributes */
 input[type="submit"] {
-    display: block;
+    display: block; /* Allows to give measures */
     width: 60%;
 }
 
@@ -123,6 +123,7 @@ input[type="password"] {
 
 .canvas {
     /* When element is greater than the container, it overflows. Use this attribute to adjust the container to the overflow */
+    /* Hides the content that overflows */
     overflow: hidden; /* Gives the margin of nested elements something to push against without modifying the dimensions */
     filter: blur(2px); /* Blurs the elements */
     border-radius: 9px; /* Rounds edges */
@@ -252,4 +253,15 @@ span:not(.sr-only) {
     top: 0;
     left: 0;
     z-index: -1;
+  }
+
+/* Content attribute is obligatory */
+  .key.black--key::after {
+    background-color: #1d1e22;
+    content:"♥";
+  }
+
+/* The universal selector does not include pseudoelements, thus they should be added manually  */
+  *, *::before, *::after {
+    box-sizing: inherit;
   }
