@@ -1,3 +1,9 @@
+:root { /* Variable declaration in root */
+    --building-color1: #aa80ff;
+    --building-color2: #66cc99;
+    --building-color3: #cc6699;
+  }
+
 /* This is a class */
 .classExample1, .classExample2 {
     color: blue;
@@ -156,7 +162,7 @@ input[type="password"] {
     }
 }
 
-.daily-value p:not(.no-divider) { /* Selects all the elements except the ones inside :not() */
+.daily-value p::not(.no-divider) { /* Selects all the elements except the ones inside :not() */
     border-bottom: 1px solid #888989;
 }
 
@@ -265,3 +271,24 @@ span:not(.sr-only) {
   *, *::before, *::after {
     box-sizing: inherit;
   }
+
+    /* Trick to visuallize all elements and their positions */
+  * {
+    border: 1px solid black;
+  }
+
+
+/* Variable declaration and usage */
+.bb1 {
+  width: 10%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  --building-color1: #999;
+}
+.bb1a {
+  width: 70%;
+  height: 10%;
+  background-color: var(--building-color2, green); /* Second variable value is fallback value */
+}

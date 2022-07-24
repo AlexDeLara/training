@@ -1,0 +1,78 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    background-color: #ffffff;
+    color: rgba(0,0,0,0.7);
+    font-family: Arial;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    padding: 2rem;
+  }
+  
+  main {
+    position: absolute;
+    margin-left: 300px;
+  }
+  
+  header {
+    font-size: 2.6rem;
+    color: rgba(0,0,0,0.95);
+  }
+  
+  p {
+    padding-left: 1.5rem;
+  }
+  
+  section li {
+    margin-bottom: 1.5rem;
+    margin-left: 2.5rem;
+  }
+  
+  code {
+    display: block;
+    margin: 1.5rem 2rem 1.5rem 3rem;
+    background-color: rgba(0,0,0,0.035);
+    padding: 1.5rem;
+    font-style: roboto;
+    font-size: 1.2rem;
+    border-radius: 5px;
+  }
+  
+  #navbar {
+    position: fixed;
+    height: 100%;
+    padding-right: 2.5rem;
+    padding-left: 0.5rem;
+    border-right: 0.5px solid black;
+    left: 0;
+  }
+  
+  #navbar > ul {
+    list-style-type: none;
+    padding-left: 0;
+    overflow: auto;
+  }
+  
+  #navbar > ul > li {
+    border-bottom: 0.5px solid black;
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: rgba(0,0,0,0.8);
+    display: block;
+  }
+  
+  @media(max-width: 800px){
+      #test{
+        width: 100%;
+      }
+  }
