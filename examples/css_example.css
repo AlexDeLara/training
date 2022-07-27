@@ -305,3 +305,48 @@ span:not(.sr-only) {
         var(--window-color2) 9%
       );
   }
+
+/* Grid display, fr stands for fraction */
+main {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+  row-gap: 3rem;
+}
+
+.heading {
+  grid-column: 2 / 3; /* Tells the content to start at grid 2 and end at grid 3 | |here| |*/
+  grid-column: 1 / -1; /* Start at column 1 and end at last one */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* Creates 2 columns of 1fr each */
+  grid-auto-flow: dense column; /* Automatically distributes elements along the axis given. If dense is specified, it allows to fill holes in the grid with smaller items and can appear out of order */
+  grid-auto-columns: 1fr; /* All new columns will be of this size */
+  align-items: center;
+  justify-items: center;
+}
+
+img {
+  width: 100%;
+  object-fit: cover; /*  Tells the browser how to position the element within its container. In this case, cover will set the image to fill the container, cropping as needed to avoid changing the aspect ratio. */
+}
+
+.text {
+  grid-column: 2 / 3;
+  font-size: 1.8rem;
+  letter-spacing: 0.6px;
+  column-width: 25rem; /* Creates columns automatically even if display is not grid */
+}
+
+/* Target the first letter in a text element */
+.first-paragraph::first-letter {
+  font-size: 6rem;
+  color: orangered;
+}
+
+/* Row gap is first and column gap second */
+.image-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, min-content);
+  gap: 2rem; /* Row gap and column gap at the same time */
+  place-items: center; /* align-items  and justify-items at the same time, in that order */
+}
