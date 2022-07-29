@@ -1,0 +1,257 @@
+*, *::after, *::before {
+    box-sizing: boder-box;
+    /*border: 1px solid gray;*/
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root{
+    --color-link: black;
+    --color-background: #eee;
+  }
+  
+  html {
+    font-size: 62.5%;
+    color: black;
+    font-family: sans-serif;
+  }
+  
+  body {
+    background-color: var(--color-background);
+    margin-top: 6rem;
+  }
+  
+  #main, #footer {
+    margin: 0 10%;
+    max-width: 80rem;
+    min-width: 50rem;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  #header-img {
+    width: 30rem;
+  }
+  
+  header {
+    position: fixed;
+    background-color: var(--color-background);
+    top: 0;
+    width: 100%;
+    height: 3.5rem;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  
+  #header-img {
+    height: 100%;
+  }
+  
+  #nav-bar {
+    float: right;
+    height: 100%;
+    width: 50%;
+    min-width: 20rem;
+  }
+  
+  #nav-bar > ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: var(--color-link);
+    font-size: 1.3rem;
+  }
+  
+  #form {
+    width: 50%;
+    margin-bottom: 5px;
+  }
+  
+  #email {
+    display: block;
+    padding: 5px;
+    margin: 0.5rem auto;
+    width: 25rem;
+  }
+  
+  #submit {
+    display: block;
+    margin: 1.5rem auto;
+    padding: 0.5rem;
+    cursor: pointer;
+    background-color: gold;
+    font-weight: 800;
+    border: none;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  #get-started > h2 {
+    margin: 0.5rem 0;
+    padding: 1rem;
+  }
+  
+  #get-started {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-grid {
+    display: grid;
+    padding: 5px;
+    height: 12%;
+    width: auto;
+    grid-template-columns: repeat(8, 1fr);
+  }
+  
+  .feature-icon {
+    grid-column: 1 / 2;
+  }
+  
+  .feature-desc {
+    grid-column: 2 / -1;
+    margin: auto 3px;
+  }
+  
+  .feature-desc > p, .feature-desc > h2 {
+    padding: 3px 0;
+  }
+  
+  #features {
+    margin-bottom: 40px;
+  }
+  
+  #video {
+    margin: 0 auto 40px;
+    display: block;
+    width: 480px;
+    height: 260px;
+  }
+  
+  #pricing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    height: 35%;
+    min-height: 20rem;
+    margin-bottom: 4rem;
+  }
+  
+  .price-box {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    border: solid 1px black;
+  }
+  
+  .product {
+    grid-row: 1 / 2;
+    text-align: center;
+    padding-top: 1rem;
+    background-color:#ddd;
+  }
+  
+  .price {
+    grid-row: 2 / 3;
+    text-align: center;
+    margin: auto 0;
+  }
+  
+  .price-descs { 
+    grid-row: 3 / 6;
+    margin: auto 0;
+  }
+  
+  .price-desc {
+    text-align: center;
+    padding: 0.3rem;
+  }
+  
+  .select-product {
+    grid-row: 6 / 7;
+    width: 50%;
+    margin: 0 auto 0.5rem;
+    background-color: gold;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .select-product:hover {
+    background-color: orange;
+  }
+  
+  .feature-icon {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: darkorange;
+  }
+  
+  .price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1.2rem;
+  }
+  
+  #footer {
+    height: 6rem;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  #footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    margin-top: 0.5rem;
+    gap: 10px;
+    margin-left: min(58vw, 75%);
+  }
+  
+  .footer-link {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  #copyright-legend {
+    height: auto;
+    text-align: right;
+    margin: 0.35rem 2rem 0.35rem;
+    color: #444444;
+    font-size: 1.1rem;
+  }
+  
+  @media(max-width: 800px){
+    header {
+      height: 7rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  
+    body {
+      background-color: var(--color-background);
+      margin-top: 10rem;
+    }
+  }

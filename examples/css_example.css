@@ -350,3 +350,42 @@ img {
   gap: 2rem; /* Row gap and column gap at the same time */
   place-items: center; /* align-items  and justify-items at the same time, in that order */
 }
+
+.line {
+  background-color: black;
+  width: 50%;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 0%; /* This will offset the origin point by 0% from the left and 0% from the top, setting it to the top left corner of the element. */
+}
+
+.line:nth-of-type(2) {
+  transform: rotate(60deg);
+}
+
+.wheel {
+  border: 2px solid black;
+  border-radius: 50%;
+  margin-left: 50px;
+  position: absolute;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
+  animation-name: wheel; /* Apply animation to objects */
+  animation-duration: 10s; /* Set animation duration in s or ms */
+  animation-iteration-count: infinite; /* Can also be set to a number */
+  animation-timing-function: linear; /* Make animation run at the same rate from start to finish */
+  animation: cabins 10s ease-in-out infinite; /* All can be condensed in one line */
+}
+
+@keyframes wheel {
+  0% { /* Percentage start of animation */
+    transform: rotate(0deg);
+  }
+  100% { /* Next percentage step of animation */
+    transform: rotate(360deg);
+  }
+}
