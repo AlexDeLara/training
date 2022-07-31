@@ -1,3 +1,15 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 :root { /* Variable declaration in root */
     --building-color1: #aa80ff;
     --building-color2: #66cc99;
@@ -43,7 +55,8 @@ div {
 
 /* Adds a background image to the entire body */
 body {
-    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg)
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+    overflow: clip; /* Remove both the horizontal and vertical scrollbars, and prevent programmatic scrolling */
 }
 
 /* Makes all the p items nested in the .item class behave as inline elements instead of block elements */
@@ -388,4 +401,40 @@ img {
   100% { /* Next percentage step of animation */
     transform: rotate(360deg);
   }
+}
+
+.left-mountain {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
+  position: absolute;
+  transform: skew(0deg, 44deg) /* The first being an angle to shear the x-axis by, and the second being an angle to shear the y-axis by. */
+}
+
+.face.left { /* Elements that explicitly have both clasesses */
+  position: relative;
+  left: 5%;
+}
+
+.arm.left {
+  top: 35%;
+  left: 5%;
+  transform-origin: top left; 
+  transform: rotate(130deg) scaleX(-1); /* Invert X axis */
+}
+
+.penguin:active { /* When item is clicked */
+  transform: scale(1.5); /* Increase size */
+}
+
+.penguin {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-top: 75px;
+  z-index: 4;
+  position: relative;
+  transition-duration: 1s; /* Modify transformation transition */
+  transition-timing-function: ease-in-out;
+  transition-delay: 0ms;
 }
