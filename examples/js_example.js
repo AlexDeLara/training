@@ -414,3 +414,35 @@ catch is the method used when your promise has been rejected. It is executed imm
 myPromise.catch(error => { // error is the argument passed in to the reject method.
   
 });
+
+// REGULAR EXPRESSIONS
+let testStr = "freeCodeCamp";
+let testRegex = /Code/;
+testRegex.test(testStr);  // test method takes a regex as input and returns true or false wether the expression is found
+
+'string'.match(/regex/);  // Returns the matched regex
+/regex/.test('string');
+
+/*
+FLAGS
+/ignorecase/i     Ignores case sensitivity
+/Repeat/g         Retrieves all occurences of a pattern and match returns an array
+*/
+
+/*
+WILDCARDS
+/hu./             Will match any character. Example huh, hug, hut
+
+CHARACTER SETS
+b[aiu]g/          Will match any of the letters inside brackets
+/[^aeiou]/gi      ^ Matches all characters that are not after ^
+/a+/g             + Matches the repeating consecutive pattern
+/go*/             /*Matches characters that occur zero or more times. Example goooooooooo in gooooooooal or g in gut feeling
+
+/^Ricky/          Outside of a character set, the ^ operator is used to match patterns at the beginning of a string
+/story$/          Matches the pattern at the end of the string
+
+Lazy operator
+/t[a-z]*i/        Will match titani in the word titanic. Returns the larges possible string
+/t[a-z]*?i/       Will macth just ti in the word titanic. Returns the smallest possible string
+*/
