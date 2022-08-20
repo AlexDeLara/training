@@ -419,6 +419,7 @@ myPromise.catch(error => { // error is the argument passed in to the reject meth
 let testStr = "freeCodeCamp";
 let testRegex = /Code/;
 testRegex.test(testStr);  // test method takes a regex as input and returns true or false wether the expression is found
+"Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1'); //Replaces regex with new text. The $ operators access the capture groups
 
 'string'.match(/regex/);  // Returns the matched regex
 /regex/.test('string');
@@ -432,7 +433,30 @@ FLAGS
 /*
 WILDCARDS
 /hu./             Will match any character. Example huh, hug, hut
+/\w/              Matches /[A-Za-z0-9_]/      Alphanumeric
+/\W/              Matches /[^A-Za-z0-9_]/     Not alphanumeric
+/\d/              Matches /[0-9]/             Digits
+/\D/              Matches /[^0-9]/            No digits
+/\s/              Matches white spaces, carriage return, tab, form feed, and new line characters [\r\t\f\n\v]
+/\S/              Matches everything but white spaces
+/{2}/             Exactly two or more occurences
+/{2,5}/           Two to five occurences
+/{2,}/            Two or more occurences
+/{1,}/            One or more occurences. Equivalent to +
+/{0,}/            Zero or more occurences. Equivalent to *
+/?/               Allows for the preceding element to ? to exist or not
 
+LOOKAHEADS
+/x(?=y)/          Matches x is y is found ahead
+/x(?!y)/          Matches x is y is NOT found ahead
+
+Are useful to CHECK one or more conditions*/
+
+let password = "abc123";
+let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+checkPass.test(password);
+
+/*
 CHARACTER SETS
 b[aiu]g/          Will match any of the letters inside brackets
 /[^aeiou]/gi      ^ Matches all characters that are not after ^
@@ -445,4 +469,8 @@ b[aiu]g/          Will match any of the letters inside brackets
 Lazy operator
 /t[a-z]*i/        Will match titani in the word titanic. Returns the larges possible string
 /t[a-z]*?i/       Will macth just ti in the word titanic. Returns the smallest possible string
+
+CAPTURA GROUPS
+/(\w+) \1 \1/     /(\w+)/ Captures and temporarily stores the captured regex. Them repeats in the \1 slotes (the number of the capture group)
+
 */
