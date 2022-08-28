@@ -29,6 +29,10 @@ for (var pixel of img.values()) {
     pixel.setGreen(newG);
 }
 
+for (let user in users) {
+  console.log(user);
+}
+
 for (let k=1; k<=10; k++) {
 
 }
@@ -122,6 +126,19 @@ const oneDown = threeArr.pop();
 const ourArray = ["Stimpson", "J", ["cat"]];
 const removedFromOurArray = ourArray.shift();
 
+// Removes any number of consecutive elements anywhere on the array
+const newarr = outArray.splice(startelement, elementstoremove, ...elementstoadd);
+
+// Find the position of an element on an array
+// If the element does not exist, -1 is returned
+let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
+fruits.indexOf('dates');
+
+// Copy or slice from the array
+// First parameter is slice start and second is slice end not including the element in the end position
+let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+let todaysWeather = weatherConditions.slice(1, 3);
+
 // Check if element in array
 [1,2].includes(n)
 
@@ -145,6 +162,7 @@ delete anotherObject.random;
 
 // Check if object property exists
 myObj.hasOwnProperty("top");
+"top" in myObj;
 
 // STRINGS
 // Strings are immutable
@@ -226,7 +244,7 @@ const multiplier = (item, multi) => item * multi;
 // Rest parameter to pass a variable number of parameters
 function howMany(...args) {
     return "You have passed " + args.length + " arguments.";
-  }
+  }arguments
   console.log(howMany(0, 1, 2));
 
 // Spread operator. Unpacks array into comma separated values
@@ -474,3 +492,280 @@ CAPTURA GROUPS
 /(\w+) \1 \1/     /(\w+)/ Captures and temporarily stores the captured regex. Them repeats in the \1 slotes (the number of the capture group)
 
 */
+
+
+// Remove falsy values from arr
+var myFilterArray = myArray.filter(Boolean);
+
+/*
+CONSTRUCTORS
+
+Constructors are functions that create new objects. They define properties and behaviors that will belong to the new object. Think of them as a blueprint for the creation of new objects.
+
+Constructors are defined with a capitalized name to distinguish them from other functions that are not constructors.
+*/
+
+function Bird(name, color) {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 2;
+}
+
+// To create a new instance of an object
+
+let bird = new Bird();
+
+// Check if an object is an instance of a CONSTRUCTOR
+bird instanceof Bird;
+
+// Properties in the prototype are shared among ALL instances of Bird.
+Bird.prototype.numLegs = 2;
+
+// To add more than one prototype property at a time
+Bird.prototype = {
+  constructor: Bird, // Define it to avoid it being reset
+  numLegs: 2, 
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+
+// There is one crucial side effect of manually setting the prototype to a new object. It erases the constructor property! 
+
+function Bird(name) {
+  this.name = name;  //own property
+}
+
+Bird.prototype.numLegs = 2; // prototype property
+
+let duck = new Bird("Donald");
+
+// To see the constructor an object was created with
+duck.constructor  // Can be overwrittem
+duck.instanceOf   // Can't be oberwritten
+
+// Protptype chains
+Dog.prototype.isPrototypeOf(beagle);  // yields trues
+Object.prototype.isPrototypeOf(Dog.prototype);
+
+// TO prevent problems with inheritance
+let animal = Object.create(Animal.prototype);
+// instead of
+let animal = new Animal();
+
+// Inheritance
+function Dog() { }
+Dog.prototype = Object.create(Animal.prototype); // Inherits all the properties from Animal
+let beagle = new Dog();
+Dog.prototype.constructor = Dog;
+beagle.constructor
+
+Dog.prototype.fly = function() { // Add new properties to classes that inherited from a superclass
+  console.log("I'm flying!");
+};
+
+// To override an inherited method simply use the same name
+
+/*
+If you have an instance let duck = new Bird(); and you call duck.eat(), this is how JavaScript looks for the method on the prototype chain of duck:
+
+duck => Is eat() defined here? No.
+Bird => Is eat() defined here? => Yes. Execute it and stop searching.
+Animal => eat() is also defined, but JavaScript stopped searching before reaching this level.
+Object => JavaScript stopped searching before reaching this level.
+*/
+
+// Mixins are used for objects that seem to share a method, but in reality no. For example, a bird and a plane both fly
+
+let flyMixin = function(obj) { //The flyMixin takes any object and gives it the fly method.
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  }
+};
+
+flyMixin(bird);
+flyMixin(plane);
+
+
+// Making properties private
+function Bird() {
+  let hatchedEgg = 10; // hatchedEgg can only be accessed by getHatchedEggCount
+
+  this.getHatchedEggCount = function() { 
+    return hatchedEgg;
+  };
+}
+let ducky = new Bird();
+ducky.getHatchedEggCount();
+
+// Anonymous function
+// Immediatly Invoked Function Expression IIFE
+(function () {
+  console.log("Chirp, chirp!");
+})();
+
+// Map method
+const users = [
+  { name: 'John', age: 34 },
+  { name: 'Amy', age: 20 },
+  { name: 'camperCat', age: 10 }
+];
+
+/*
+When the callback is used, it is passed three arguments. 
+The first argument is the current element being processed. 
+The second is the index of that element
+The third is the array upon which the map method was called.
+*/
+
+const names = users.map(user => user.name); // No mutation
+console.log(names);
+
+var ratings = watchList.map(function(movie) {
+  return {
+    title: movie["Title"],
+    rating: movie["imdbRating"]
+  }
+});
+
+// Filter method
+/*
+The callback function accepts three arguments. 
+The first argument is the current element being processed. 
+The second is the index of that element and
+The third is the array upon which the filter method was called.
+*/
+
+const usersUnder30 = users.filter(user => user.age < 30);
+console.log(usersUnder30); // No mutation
+
+// Concat method
+arr1.concat(arr2) //No mutation
+
+// Reduce
+/*
+The callback function accepts four arguments
+The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration
+The second is the current element being processed
+The third is the index of that element
+The fourth is the array upon which reduce is called
+*/
+
+const users = [
+  { name: 'John', age: 34 },
+  { name: 'Amy', age: 20 },
+  { name: 'camperCat', age: 10 }
+];
+
+const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
+console.log(sumOfAges);
+
+const users = [
+  { name: 'John', age: 34 },
+  { name: 'Amy', age: 20 },
+  { name: 'camperCat', age: 10 }
+];
+
+const usersObj = users.reduce((obj, user) => {
+  obj[user.name] = user.age;
+  return obj;
+}, {});
+console.log(usersObj);
+
+// Sort method
+// Mutates
+//The sort method sorts the elements of an array according to the callback function.
+//For example:
+
+function ascendingOrder(arr) {
+  return arr.sort(function(a, b) {
+    return a - b;
+  });
+}
+
+ascendingOrder([1, 5, 2, 3, 4]);
+//This would return the value [1, 2, 3, 4, 5].
+
+function reverseAlpha(arr) {
+  return arr.sort(function(a, b) {
+    return a === b ? 0 : a < b ? 1 : -1;
+  });
+}
+
+reverseAlpha(['l', 'h', 'z', 'b', 's']);
+//This would return the value ['z', 's', 'l', 'h', 'b']
+
+// Split
+// Strings are immutable
+const str = "Hello World";
+const bySpace = str.split(" ");
+
+const otherString = "How9are7you2today";
+const byDigits = otherString.split(/\d/);
+
+// Regex for all type of punctuation /[.,\/#!$%\^&\*;:{}=\-_`~()]/g
+
+// Join
+const arr = ["Hello", "World"];
+const str = arr.join(" ");
+
+// Every method
+// The every method works with arrays to check if every element passes a particular test. 
+// It returns a Boolean value - true if all values meet the criteria, false if not.
+
+const numbers = [1, 5, 8, 0, 10, 11];
+
+numbers.every(function(currentValue) {
+  return currentValue < 10;
+});
+
+// Some method
+// The some method works with arrays to check if any element passes a particular test. 
+// It returns a Boolean value - true if any of the values meet the criteria, false if not.
+const numbers = [10, 50, 8, 220, 110, 11];
+
+numbers.some(function(currentValue) {
+  return currentValue < 10;
+});
+
+// Currying
+//The arity of a function is the number of arguments it requires. Currying a function means to convert a function of N arity into N functions of arity 1.
+
+//In other words, it restructures a function so it takes one argument, then returns another function that takes the next argument, and so on.
+
+//Here's an example:
+
+function unCurried(x, y) {
+  return x + y;
+}
+
+function curried(x) {
+  return function(y) {
+    return x + y;
+  }
+}
+
+const curried = x => y => x + y
+
+curried(1)(2);
+
+/*
+This is useful in your program if you can't supply all the arguments to a function at one time. 
+You can save each function call into a variable, which will hold the returned function reference that takes the next argument when it's available. 
+Here's an example using the curried function in the example above
+*/
+const funcForY = curried(1);
+console.log(funcForY(2)); // 3
+
+// Partialling
+// Similarly, partial application can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments. Here's an example:
+
+function impartial(x, y, z) {
+  return x + y + z;
+}
+
+const partialFn = impartial.bind(this, 1, 2);
+partialFn(10); // 13
