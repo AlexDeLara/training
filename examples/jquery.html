@@ -1,0 +1,41 @@
+<!-- All jQuery operations start with $ -->
+
+<!-- Using jQuery and Animate.css libraries to make page interactive -->
+<script>
+    $(document).ready(function() {
+        //$(".class") $("#id") $("element") to target any element
+        $("button").addClass("animated bounce"); // Apply a bouncy efect to all buttons
+        $(".well").addClass("animated shake");
+        $("#target3").addClass("animated fadeOut");
+
+        $("#target2").removeClass("btn-default"); // Remove a class from an element
+
+        $("#target1").css("color", "blue"); // Change the CSS styling of an element
+
+        $("button").prop("disabled", true); // Modify properties of elements
+
+        $("h3").html("<em>jQuery Playground</em>"); // Modify HTML tag content
+
+        $("h3").text("Hello World"); // Modify ONLY HTML text
+
+        $("#target4").remove(); // Completely remove an element
+
+        $("#target4").appendTo("#left-well"); // Move an element from one div or container to another
+
+        $("#target2").clone().appendTo("#right-well"); // COPY elements from one place to another
+
+        $("#left-well").parent().css("background-color", "blue") // Access a parent element and modify its properties
+
+        $("#left-well").children().css("color", "blue") // Access children elements and modify their properties
+
+        $(".target:nth-child(3)").addClass("animated bounce"); // Seleft the third child of the target class
+
+        $(".target:odd").addClass("animated shake"); // Target odd and even elements
+    });
+</script>
+
+<!--
+    jQuery functions
+
+    .addClass()     Adds a class to an element
+-->
