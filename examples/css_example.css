@@ -162,12 +162,23 @@ input[type="password"] {
     flex-direction: row; /* Sets de direction of display. Availible are row, row-reverse, column, column-reverse */
     flex-wrap: wrap; /* Determines if elements continue in the next row/column when the container is too small. Availible are wrap and nowrap */
     justify-content: center; /* Determines how elements justify (like text) in the row/column they are placed */
+    /* Options are flex-start flex-end center space-around space-between space-evenly */
     align-items: center; /* Positions the flex content along the cross axis. If flex-direction is row, then cross-axis is vertical */
+    /* Options are stretch flex-start flex-end center baseline. Default is stretch */
     position: fixed;
     gap: 1rem; /* Gap between flex elements */
+    row-gap: 2rem;
+    column-gap: 3rem;
     position: sticky;
     top: 0;
+    flex-flow: row wrap; /* Is equal to flex-direction and flex-wrap */
+    align-self: center; /* Allows to aling a single item inside a flexbox. Align-items must be delcared */
+    align-content: center; /* Works only on multi-line flex */
+    /* Guide: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container */
 }
+/* Display can be set to flex or inline-flex */
+/* justify-content aligns items across the main axis. */
+/* align-items to change item placement across cross axis */
 
 #gallery img {
     object-fit: cover; /* Tells the image to FILL the containir without distorting */
@@ -191,6 +202,14 @@ nav > ul {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
+}
+
+.flex_item {
+  flex: 1 1 auto; /*flex-grow flex-shrink flex-basis*/
+  flex: 1; /* Sets flex: 1 1 0 */
+  flex: auto; /* Sets flex: 1 1 auto */
+  flex: initial; /* Sets flex: 0 1 auto */
+  flex: none; /* Sets flex: 0 0 auto */
 }
 
 /* Adds "Question #" before each p element */

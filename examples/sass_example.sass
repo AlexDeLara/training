@@ -1,0 +1,109 @@
+<style type='text/scss'>
+
+  /*Use $ to define variables*/
+  $main-fonts: Arial, sans-serif;
+  $headings-color: green;
+  
+  /*For bigger projects use nested CSS*/
+  .blog-post {
+    h1 {
+      text-align: center;
+      color: blue;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+
+  // Mixins
+  // In Sass, a mixin is a group of CSS declarations that can be reused throughout the style sheet.
+
+  @mixin box-shadow($x, $y, $blur, $c){ 
+    -webkit-box-shadow: $x $y $blur $c;
+    -moz-box-shadow: $x $y $blur $c;
+    -ms-box-shadow: $x $y $blur $c;
+    box-shadow: $x $y $blur $c;
+  }
+
+
+  // Use if, else, else if to add logic to styling
+  @mixin text-effect($val) {
+    @if $val == danger {
+      color: red;
+    }
+    @else if $val == alert {
+      color: yellow;
+    }
+    @else if $val == success {
+      color: green;
+    }
+    @else {
+      color: black;
+    }
+
+    // For loops
+    @for $i from 1 through 12 { // Includes the end number
+      .col-#{$i} { width: 100%/12 * $i; }
+    }
+
+    @for $i from 1 to 12 { // Excludes the end number
+      .col-#{$i} { width: 100%/12 * $i; }
+    }
+
+  }
+
+  // Each loops iterate over a list of elements
+  @each $color in blue, red, green {
+    .#{$color}-text {color: $color;}
+  }
+
+  $colors: (color1: blue, color2: red, color3: green);
+
+  @each $key, $color in $colors {
+    .#{$color}-text {color: $color;}
+  }
+
+  // WHile loop
+  $x: 1;
+  @while $x < 13 {
+    .col-#{$x} { width: 100%/12 * $x;}
+    $x: $x + 1;
+  }
+
+</style>
+
+
+// The definition starts with @mixin followed by a custom name. 
+// The parameters (the $x, $y, $blur, and $c in the example above) are optional. 
+// Now any time a box-shadow rule is needed, only a single line calling the mixin replaces having to type all the vendor prefixes. 
+// A mixin is called with the @include directive:
+
+div {
+  @include box-shadow(0px, 0px, 4px, #fff);
+}
+
+// Partials in Sass are separate files that hold segments of CSS code. 
+// These are imported and used in other Sass files. 
+// This is a great way to group similar code into a module to keep it organized.
+
+// Names for partials start with the underscore (_) character, which tells Sass it is a small segment of CSS and not to convert it into a CSS file. 
+// Also, Sass files end with the .scss file extension. To bring the code in the partial into another Sass file, use the @import directive.
+
+// For example, if all your mixins are saved in a partial named "_mixins.scss", and they are needed in the "main.scss" file, this is how to use them in the main file:
+// The main.scss file
+@import 'mixins'
+// File name is actually _mixins.scss
+
+// To inherit attributes from one element into another and extend it
+
+.panel{
+  background-color: red;
+  height: 70px;
+  border: 2px solid green;
+}
+  
+.big-panel{
+  @extend .panel;
+  width: 150px;
+  font-size: 2em;
+}
