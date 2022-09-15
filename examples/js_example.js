@@ -1,6 +1,8 @@
 // Variables
 var x = 3;                                      // variable declaration can be overwritten without an error with var
-let camper = "James";                           // variable can only be declared once with let. The variable exists only in the block of context it was defined
+let user = 'John'
+  , age = 25
+  , message = 'Hello';                          // variable can only be declared once with let. The variable exists only in the block of context it was defined
 const VARNAME = "This is a read only var"       // const variables are read only. OBjects will still be mutable
 // To prevent a variable from changing use:
 Object.freeze(VARNAME);
