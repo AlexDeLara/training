@@ -1,0 +1,27 @@
+<!-- DIRECTLY ON HTML -->
+<!-- Not ideal to put JS into HTML. Also theres only one onclick event per element -->
+<button onclick="alertFunction()">Click Me</button>
+<!--
+    function alertFunction() {
+    alert("YAY! YOU DID IT!");
+    }
+-->
+
+<!-- USING JS -->
+<!-- Is a little better, but still only one onclick per element -->
+<button id="btn">Click Me</button>
+<!--
+    // the JavaScript file
+    const btn = document.querySelector('#btn');
+    btn.onclick = () => alert("Hello World");
+-->
+
+<!-- USING LISTENERS -->
+<button id="btn">Click Me Too</button>
+<!--
+    // the JavaScript file
+    const btn = document.querySelector('#btn');
+    btn.addEventListener('click', () => {
+    alert("Hello World");
+    });
+-->

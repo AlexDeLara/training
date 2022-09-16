@@ -771,3 +771,12 @@ function impartial(x, y, z) {
 
 const partialFn = impartial.bind(this, 1, 2);
 partialFn(10); // 13
+
+const helloWorld = function() {
+  return ''
+}
+
+module.exports = helloWorld // Exports a function to be taken from another file
+
+// Import code from a script into a variable
+const helloWorld = require('./helloWorld');
