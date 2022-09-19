@@ -239,7 +239,7 @@ class MyComponent extends React.Component {
 };
 
 {/* *********************************************************************************************************************************** */}
-{/* React updates props and states SYNCHRONOUSLY. This means one must not rely on this.state and this.prop values. Instead, a function with state and props must be used */}
+{/* React updates props and states ASYNCHRONOUSLY. This means one must not rely on this.state and this.prop values. Instead, a function with state and props must be used */}
 
 this.setState((state, props) => ({
   counter: state.counter + props.increment
@@ -683,3 +683,27 @@ class MyComponent extends React.Component {
     );
   }
 };
+
+{/* It is good practice to render the HTML in the server first */}
+{/*
+There are two key reasons why rendering on the server may be used in a real world app. 
+First, without doing this, your React apps would consist of a relatively empty HTML file and a large bundle of JavaScript when it's initially loaded to the browser. 
+This may not be ideal for search engines that are trying to index the content of your pages so people can find you. 
+If you render the initial HTML markup on the server and send this to the client, the initial page load contains all of the page's markup which can be crawled by search engines. 
+Second, this creates a faster initial page load experience because the rendered HTML is smaller than the JavaScript code of the entire app. 
+React will still be able to recognize your app and manage it after the initial load.
+*/}
+
+import React from "react";
+import ReactDOMServer , {renderToString} from "react-dom/server";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div/>
+  }
+};
+
+ReactDOMServer.renderToString(<App/>);
