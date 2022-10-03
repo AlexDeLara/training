@@ -780,3 +780,16 @@ module.exports = helloWorld // Exports a function to be taken from another file
 
 // Import code from a script into a variable
 const helloWorld = require('./helloWorld');
+
+// Async response error handling
+async function fetchMovies404() {
+  const response = await fetch('/oops');
+  
+  response.ok;     // => false
+  response.status; // => 404
+  const text = await response.text();
+  return text;
+}
+fetchMovies404().then(text => {
+  text; // => 'Page not found'
+});
